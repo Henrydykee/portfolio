@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
       color: Coolors.primaryColor,
       child: VStack([
         Header(),
-        IntroductionWidget()
+        if(context.isMobile) IntroductionWidget().p16()
       ]).scrollVertical(),
     );
   }

@@ -10,6 +10,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var namewidget =   "Dike\nUgochukwu".text.white.xl6.lineHeight(1).size(context.isMobile? 10 : 20).make().shimmer();
+    var namewidget2 =   "Dike\nUgochukwu".text.white.xl6.lineHeight(1).size(context.isMobile? 10 : 20).make().shimmer();
     return SafeArea(child:
     VxBox(child: VStack([
       ZStack([
@@ -17,11 +18,12 @@ class Header extends StatelessWidget {
         Row(
           children: [
             VStack([
-              CustomAppBar().shimmer(
+              if(context.isMobile) 50.heightBox else 10.heightBox,
+             if (context.isMobile) CustomAppBar().shimmer(
                 primaryColor: Coolors.accentColor
-              ),
+              ) else CustomAppBar(),
               30.heightBox,
-              namewidget,
+              if (context.isMobile) namewidget else namewidget2,
               20.heightBox,
               VxBox().color(Coolors.accentColor).size(60,10).make().shimmer(
                 primaryColor: Coolors.accentColor
@@ -29,13 +31,14 @@ class Header extends StatelessWidget {
               20.heightBox,
               SocialAccounts()
             ]).pSymmetric(h: context.percentWidth * 10 , v: 32),
-            // Expanded(child: VStack ([
-            //   "Introduction".text.gray500.widest.sm.make(),
-            //   10.heightBox,
-            //   "".text.white.xl3.maxLines(5).make().w(context.isMobile? context.screenWidth: context.percentWidth * 40),
-            //   20.heightBox,
-            //
-            // ]))
+            Expanded(
+              child: VxResponsive(
+                fallback: Offstage(),
+                medium: IntroductionWidget().pOnly(left: 120).h(context.percentHeight* 60),
+                large:  IntroductionWidget().pOnly(left: 120).h(context.percentHeight*60),
+
+              ),
+            )
           ],
         ),
 
