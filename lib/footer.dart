@@ -32,7 +32,7 @@ class FooterScreen extends StatelessWidget {
           ),
           web: GestureDetector(
             onTap: (){
-              launch("https://docs.google.com/document/d/1GOMeCxlddVu22jn0tOz2hfQ_SNu9lDUPYWJ18h8Ylyo/edit?usp=sharing");
+              launch("https://docs.google.com/document/d/1GOMeCxlddVu22jn0tOz2hfQ_SNu9lDUPYWJ18h8Ylyo/edit?usp=sharing ");
             },
             child: HStack(
               [
