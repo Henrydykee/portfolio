@@ -10,7 +10,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var namewidget =   "Dike\nUgochukwu".text.white.xl6.lineHeight(1).size(context.isMobile? 10 : 20).make().shimmer();
-    var namewidget2 =   "Dike\nUgochukwu".text.white.xl6.lineHeight(1).size(context.isMobile? 10 : 20).make().shimmer();
+    var namewidget2 =   "Dike\nUgochukwu".text.white.xl6.lineHeight(1).size(context.isMobile? 10 : 20).make();
     return SafeArea(child:
     VxBox(child: VStack([
       ZStack([
@@ -24,10 +24,10 @@ class Header extends StatelessWidget {
               ) else CustomAppBar(),
               30.heightBox,
               if (context.isMobile) namewidget else namewidget2,
-              20.heightBox,
-              VxBox().color(Coolors.accentColor).size(60,10).make().shimmer(
+              30.heightBox,
+              if(context.isMobile)VxBox().color(Coolors.accentColor).size(60,10).make().shimmer(
                 primaryColor: Coolors.accentColor
-              ),
+              ) else VxBox().color(Coolors.accentColor).size(60,10).make(),
               20.heightBox,
               SocialAccounts()
             ]).pSymmetric(h: context.percentWidth * 10 , v: 32),
@@ -124,10 +124,10 @@ class IntroductionWidget extends StatelessWidget {
         [
           " - Introduction".text.gray500.widest.sm.make(),
           10.heightBox,
-          "Flutter developer and Backend developer"
+          "A Jnr.android developer (Dart) and i write Nodejs codes for a living,\nI no too normal like that sha,apparently i am a tech guy not a tech bro"
               .text
               .white
-              .xl3
+              .xl
               .maxLines(5)
               .make()
               .w(context.isMobile
