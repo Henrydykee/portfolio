@@ -9,8 +9,8 @@ import 'package:url_launcher/url_launcher.dart';
 class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var namewidget =   "Dike\nUgochukwu".text.white.xl6.lineHeight(1).size(context.isMobile? 10 : 20).make().shimmer();
-    var namewidget2 =   "Dike\nUgochukwu".text.white.xl6.lineHeight(1).size(context.isMobile? 10 : 20).make();
+    var namewidget =   "Dike\nUgochukwu".text.white.xl6.lineHeight(1).size(context.isMobile? 10 : 20).make();
+    // var namewidget2 =   "Dike\nUgochukwu".text.white.xl6.lineHeight(1).size(context.isMobile? 10 : 20).make();
     return SafeArea(child:
     VxBox(child: VStack([
       ZStack([
@@ -19,15 +19,11 @@ class Header extends StatelessWidget {
           children: [
             VStack([
               if(context.isMobile) 50.heightBox else 10.heightBox,
-             if (context.isMobile) CustomAppBar().shimmer(
-                primaryColor: Coolors.accentColor
-              ) else CustomAppBar(),
+              CustomAppBar(),
               30.heightBox,
-              if (context.isMobile) namewidget else namewidget2,
+              namewidget,
               30.heightBox,
-              if(context.isMobile)VxBox().color(Coolors.accentColor).size(60,10).make().shimmer(
-                primaryColor: Coolors.accentColor
-              ) else VxBox().color(Coolors.accentColor).size(60,10).make(),
+              VxBox().color(Coolors.accentColor).size(60,10).make(),
               20.heightBox,
               SocialAccounts()
             ]).pSymmetric(h: context.percentWidth * 10 , v: 32),
@@ -36,12 +32,10 @@ class Header extends StatelessWidget {
                 fallback: Offstage(),
                 medium: IntroductionWidget().pOnly(left: 120).h(context.percentHeight* 60),
                 large:  IntroductionWidget().pOnly(left: 120).h(context.percentHeight*60),
-
               ),
             )
           ],
         ),
-
       ])
     ])).make());
   }
@@ -124,7 +118,7 @@ class IntroductionWidget extends StatelessWidget {
         [
           " - Introduction".text.gray500.widest.sm.make(),
           10.heightBox,
-          "A Jnr.android developer (Dart) and i write Nodejs codes for a living,\nI no too normal like that sha,apparently i am a tech guy not a tech bro"
+          "An Android developer (Dart) and i write Nodejs codes for a living,\nI no too normal like that sha,apparently i am a tech guy not a tech bro"
               .text
               .white
               .xl
