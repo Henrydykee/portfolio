@@ -55,10 +55,15 @@ class FooterScreen extends StatelessWidget {
         50.heightBox,
         CustomAppBar(),
         10.heightBox,
-        "Thanks for scrolling, ".richText.semiBold.white.withTextSpanChildren(
-            ["that's all folks.".textSpan.gray500.make()]).make(),
+        "Thanks for scrolling,".richText.semiBold.white.withTextSpanChildren(
+            ["that's all folks".textSpan.gray500.make()]).make(),
         10.heightBox,
         SocialAccounts(),
+        10.heightBox,
+        [
+          "Made With Flutter".text.white.make(),
+          10.widthBox,
+        ].hStack(crossAlignment: CrossAxisAlignment.center),
         30.heightBox,
       ],
       crossAlignment: CrossAxisAlignment.center,
